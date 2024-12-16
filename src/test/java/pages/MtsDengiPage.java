@@ -25,7 +25,6 @@ public class MtsDengiPage {
         return this;
     }
 
-
     public MtsDengiPage debitCardButtonClick() {
         debitCardElement.shouldHave(text("Дебетовая карта")).click();
         return this;
@@ -42,7 +41,6 @@ public class MtsDengiPage {
         return this;
     }
 
-
     public boolean isBlockTitleDisplayed() {
         return blockName.getText().contains("Оформите карту");
     }
@@ -53,11 +51,9 @@ public class MtsDengiPage {
         return this;
     }
 
-
     public boolean isFirstErrorMessageDisplayed(String expectedMessage) {
         return firstErrorMessage.getText().contains(expectedMessage);
     }
-
 
     public MtsDengiPage isVkLinkDisplayed() {
         if (!vkLink.shouldBe(Condition.visible).exists()) {
