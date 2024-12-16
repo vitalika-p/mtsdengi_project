@@ -1,6 +1,7 @@
 package tests;
 
 import jdk.jfr.Description;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MtsDengiPage;
 
@@ -10,6 +11,7 @@ public class MtsDengiTests extends TestBase {
 
     MtsDengiPage mtsDengiPage = new MtsDengiPage();
 
+    @Tag("Simple")
     @Test
     @Description("Проверка, что отображается текст на странице после перехода по ссылке 'Дебетовая карта'")
     void openDebitCardPageTest() {
@@ -24,6 +26,7 @@ public class MtsDengiTests extends TestBase {
         });
     }
 
+    @Tag("Simple")
     @Test
     @Description("Проверка, что после клика на 'Дебетовая карта' открывается блок с заказом карты")
     void clickOnTheButtonTest() {
@@ -41,6 +44,7 @@ public class MtsDengiTests extends TestBase {
         });
     }
 
+    @Tag("Simple")
     @Test
     @Description("Проверка, что при отправке пустого значения отображается ошибка")
     void sendEmptyValueTest() {
@@ -58,6 +62,7 @@ public class MtsDengiTests extends TestBase {
         });
     }
 
+    @Tag("Simple")
     @Test
     @Description("Проверка, что иконка на ВКонтакте отображается")
     void VkLinkIconIsVisible() {
@@ -72,6 +77,7 @@ public class MtsDengiTests extends TestBase {
         });
     }
 
+    @Tag("Simple")
     @Test
     @Description("Проверка, что кнопка 'Войти в интернет-банк' отображается")
     void loginButtonIsDisplayedTest() {
