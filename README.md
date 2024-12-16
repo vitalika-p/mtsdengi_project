@@ -47,12 +47,6 @@ gradle clean simple_test
 ```
 При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
 
-### Запуск тестов на удаленном браузере
-```
-gradle clean test -Denv=simple
-```
-При необходимости также можно переопределить параметры запуска
-
 ```
 clean
 simple_test
@@ -87,6 +81,17 @@ simple_test
 <p align="center">
 <img title="Test Results in Alure" src="media/screens/ResultTest.png">
 </p>
+
+## <img src="media/logo/AllureTestOps.svg" title="Allure TestOps" width="4%"/> Интеграция с Allure TestOps
+
+Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
+Результат выполнения автотестов отображается в <code>Allure TestOps</code>
+На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
+
+<p align="center">
+<img title="Allure TestOps DashBoard" src="media/screens/allureAutotestCloud.png">
+</p>
+
 
 ## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 
