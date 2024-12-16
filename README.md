@@ -43,23 +43,23 @@
 
 ### Запуск тестов из терминала
 ```
-gradle clean main_test
+gradle clean simple_test
 ```
 При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
 
 ### Запуск тестов на удаленном браузере
 ```
-gradle clean test -Denv=main
+gradle clean test -Denv=simple
 ```
 При необходимости также можно переопределить параметры запуска
 
 ```
 clean
-main -DremoteUrl=${SELENOID_URL}
--DbaseUrl=${BASE_URL}
+simple_test
+-DremoteUrl=https://${REMOTE_LOGIN}:${REMOTE_PASSWORD}@${REMOTE_URL}/wd/hub
+-DbrowserName=${BROWSER}
+-DbrowserVersion=${BROWSER_VERSION}
 -DbrowserSize=${BROWSER_SIZE}
--Dbrowser=${BROWSER_NAME}
--Dbrowser_version="${BROWSER_VERSION}"
 ```
 
 ### Параметры сборки
@@ -67,7 +67,7 @@ main -DremoteUrl=${SELENOID_URL}
 * <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
-* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение. По-умолчанию - <code>1920x1080</code>.
+* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
 * <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 ## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
