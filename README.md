@@ -5,7 +5,7 @@
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
 - [Сборка в Jenkins](#img-srcmedialogojenkinssvg-titlejenkins-width4-сборка-в-jenkins)
 - [Пример Allure-отчета](#img-srcmedialogoallure_reportsvg-titleallure-report-width4-пример-allure-отчета)
-- [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
+- [Интеграция с Allure TestOps](#img-srcmedialogoalluretestopssvg-titleallure-testops-width4-интеграция-с-allure-testops)
 - [Уведомления в Telegram с использованием бота](#img-width4-stylevertical-alignmiddle-titletelegram-srcmedialogotelegramsvg-уведомления-в-telegram-с-использованием-бота)
 - [Видео примера запуска тестов в Selenoid](#видео-примера-запуска-тестов-в-selenoid)
 
@@ -69,7 +69,7 @@ simple_test
 <img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
 </p>
 
-## <img src="media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
+## <img src"media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
 ### Overview
 
 <p align="center">
