@@ -3,10 +3,11 @@
 
 - [Использованный стек технологий](#computer-использованный-стек-технологий)
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#-сборка-в-jenkins)
+- [Сборка в Jenkins](#img-srcmedialogojenkinssvg-titlejenkins-width4-сборка-в-jenkins)
 - [Пример Allure-отчета](#img-srcmedialogoallure_reportsvg-titleallure-report-width4-пример-allure-отчета)
+- [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
 - [Уведомления в Telegram с использованием бота](#img-width4-stylevertical-alignmiddle-titletelegram-srcmedialogotelegramsvg-уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
+- [Видео примера запуска тестов в Selenoid](#видео-примера-запуска-тестов-в-selenoid)
 
 ## :computer: Использованный стек технологий
 
