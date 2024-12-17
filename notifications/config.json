@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "031_vmn_qaguru_jenkins_11",
+    "environment": "qa.guru",
+    "comment": "tests",
+    "reportLink": "https://jenkins.autotests.cloud/job/031_vmn_qaguru_jenkins_11/32/",
+    "language": "ru",
+    "allureFolder": "/var/folders/dz/jjkjnnqn2k719mctkj0fvb9c0000gn/T/6071596316916515504/allure-report",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "8035448034:AAHaXn-bfRsQ7_9mBoXuQmbGn3YQvXqCBWs",
+    "chat": "2101650821",
+    "replyTo": ""
+  }
+}

@@ -8,11 +8,11 @@ allure {
     report {
         version.set("2.19.0")
     }
-    adapter { // отвечает за появление папочки build/allure-results
-        aspectjWeaver.set(true) //обработка аннотации @Step
+    adapter {
+        aspectjWeaver.set(true)
         frameworks {
             junit5 { //название фреймворка
-                adapterVersion.set("2.29.0") //версия интеграции фреймворка и Allure
+                adapterVersion.set("2.29.0")
             }
         }
     }

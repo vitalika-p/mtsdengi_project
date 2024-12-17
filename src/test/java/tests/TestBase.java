@@ -15,15 +15,12 @@ public class TestBase {
     @BeforeAll
     static void preconditionForAllTests() {
         Configuration.browserSize = "1920x1080";
-        Configuration.browser = "chrome";
         Configuration.baseUrl = "https://mtsdengi.ru";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = false;
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.browser = System.getProperty("browserName", "chrome");
         Configuration.remote = System.getProperty("remoteUrl");
         Configuration.browserVersion = System.getProperty("browserVersion");
-        //"https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
