@@ -3,7 +3,7 @@
 
 - [Использованный стек технологий](#computer-использованный-стек-технологий)
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#img-srcmedialogojenkinssvg-titlejenkins-width4-сборка-в-jenkins)
+- [Сборка в Jenkins](#-сборка-в-jenkins)
 - [Пример Allure-отчета](#img-srcmedialogoallure_reportsvg-titleallure-report-width4-пример-allure-отчета)
 - [Уведомления в Telegram с использованием бота](#img-width4-stylevertical-alignmiddle-titletelegram-srcmedialogotelegramsvg-уведомления-в-telegram-с-использованием-бота)
 - [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
@@ -22,7 +22,6 @@
 <a href="https://github.com/"><img src="media/logo/GitHub.svg" width="50" height="50"  alt="Github"/></a>   
 <a href="https://www.jenkins.io/"><img src="media/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>   
 <a href="https://web.telegram.org/k//"><img src="media/logo/Telegram.svg" width="50" height="50"  alt="IDEA"/></a>
-<a href="https://www.atlassian.com/ru/software/jira/"><img src="media/logo/Jira.svg" width="50" height="50"  alt="Jira"/></a>
 </p>
 
 - В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования Selenide. 
@@ -30,7 +29,7 @@
 - Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
 - Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота. 
-- Осуществлена интеграция с <code>Allure TestOps</code> и <code>Jira</code>
+- Осуществлена интеграция с <code>Allure TestOps</code>
 
 Содержание Allure-отчета:
 * Шаги теста;
