@@ -15,80 +15,49 @@ public class MtsDengiTests extends TestBase {
     @Test
     @Description("Проверка, что отображается текст на странице после перехода по ссылке 'Дебетовая карта'")
     void openDebitCardPageTest() {
-        step("Открыть страницу", () -> {
-            mtsDengiPage.openMainPage();
-        });
-        step("Нажать на Дебетовые карты", () -> {
-            mtsDengiPage.debitCardButtonClick();
-        });
-        step("Проверить отображение текста", () -> {
-            mtsDengiPage.isPageTextDisplayed();
-        });
+        mtsDengiPage.openMainPage()
+                .debitCardButtonClick()
+                .isPageTextDisplayed();
     }
 
     @Tag("Simple")
     @Test
     @Description("Проверка, что после клика на 'Дебетовая карта' открывается блок с заказом карты")
     void clickOnTheButtonTest() {
-        step("Открыть страницу", () -> {
-            mtsDengiPage.openMainPage();
-        });
-        step("Нажать на Дебетовые карты", () -> {
-            mtsDengiPage.debitCardButtonClick();
-        });
-        step("Нажать на Оформить карту", () -> {
-            mtsDengiPage.bankCardOrder();
-        });
-        step("Проверить отображение названия блока", () -> {
-            mtsDengiPage.isBlockTitleDisplayed();
-        });
+        mtsDengiPage
+                .openMainPage()
+                .debitCardButtonClick()
+                .bankCardOrder()
+                .isBlockTitleDisplayed();
     }
 
     @Tag("Simple")
     @Test
     @Description("Проверка, что при отправке пустого значения отображается ошибка")
     void sendEmptyValueTest() {
-        step("Открыть страницу", () -> {
-            mtsDengiPage.openMainPage();
-        });
-        step("Нажать на Дебетовые карты", () -> {
-            mtsDengiPage.debitCardButtonClick();
-        });
-        step("Нажать на Оформить", () -> {
-            mtsDengiPage.sendEmptyValue();
-        });
-        step("Проверить отображение ошибки", () -> {
-            mtsDengiPage.isFirstErrorMessageDisplayed("Введите верный номер телефона");
-        });
+        mtsDengiPage
+                .openMainPage()
+                .debitCardButtonClick()
+                .sendEmptyValue()
+                .isFirstErrorMessageDisplayed("Введите верный номер телефона");
     }
 
     @Tag("Simple")
     @Test
     @Description("Проверка, что иконка на ВКонтакте отображается")
     void VkLinkIconIsVisible() {
-        step("Открыть страницу", () -> {
-            mtsDengiPage.openMainPage();
-        });
-        step("Нажать на Дебетовые карты", () -> {
-            mtsDengiPage.debitCardButtonClick();
-        });
-        step("Проверить отображение кнопки для перехода в ВК", () -> {
-            mtsDengiPage.isVkLinkDisplayed();
-        });
+        mtsDengiPage
+                .openMainPage()
+                .debitCardButtonClick()
+                .isVkLinkDisplayed();
     }
 
     @Tag("Simple")
     @Test
     @Description("Проверка, что кнопка 'Войти в интернет-банк' отображается")
     void loginButtonIsDisplayedTest() {
-        step("Открыть страницу", () -> {
-            mtsDengiPage.openMainPage();
-        });
-        step("Нажать на Дебетовые карты", () -> {
-            mtsDengiPage.debitCardButtonClick();
-        });
-        step("Проверка отображения кнопки логина", () -> {
-            mtsDengiPage.isLoginButtonDisplayed();
-        });
+        mtsDengiPage.openMainPage()
+                .debitCardButtonClick()
+                .isLoginButtonDisplayed();
     }
 }

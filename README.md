@@ -1,13 +1,13 @@
 # Проект по автоматизации тестовых сценариев для сайта МТС-Деньги
 ## :pushpin: Содержание:
 
-- [Использованный стек технологий](#computer-использованный-стек-технологий)
-- [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#img-srcmedialogojenkinssvg-titlejenkins-width4-сборка-в-jenkins)
-- [Пример Allure-отчета](#img-srcmedialogoallure_reportsvg-titleallure-report-width4-пример-allure-отчета)
-- [Интеграция с Allure TestOps](#img-srcmedialogoalluretestopssvg-titleallure-testops-width4-интеграция-с-allure-testops)
-- [Уведомления в Telegram с использованием бота](#img-width4-stylevertical-alignmiddle-titletelegram-srcmedialogotelegramsvg-уведомления-в-telegram-с-использованием-бота)
-- [Видео примера запуска тестов в Selenoid](#видео-примера-запуска-тестов-в-selenoid)
+- Использованный стек технологий
+- Запуск автотестов
+- Сборка в Jenkins
+- Пример Allure-отчета
+- Интеграция с Allure TestOps
+- Уведомления в Telegram с использованием бота
+- Видео примера запуска тестов в Selenoid
 
 ## :computer: Использованный стек технологий
 

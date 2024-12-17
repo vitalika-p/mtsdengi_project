@@ -19,42 +19,46 @@ public class MtsDengiPage {
             vkLink = $("#mtsdengi-footer a:nth-child(2)"),
             loginButton = $("#__next .styled__HeaderContainer-sc-vvwooi-0 .ui__SmartVisibleChild-sc-a9c9b92d-0.bkjWql a");
 
-
+    @Step("Открываем главную страницу")
     public MtsDengiPage openMainPage() {
         open("");
         return this;
     }
 
+    @Step("Нажимаем на кнопку 'Дебетовая карта'")
     public MtsDengiPage debitCardButtonClick() {
         debitCardElement.shouldHave(text("Дебетовая карта")).click();
         return this;
     }
 
-
+    @Step("Проверяем, что текст на странице отображается")
     public boolean isPageTextDisplayed() {
         return pageText.getText().contains("Дарим 25 айфонов");
     }
 
-
+    @Step("Оформляем заказ банковской карты")
     public MtsDengiPage bankCardOrder() {
         getACardButton.click();
         return this;
     }
-
+    @Step("Проверяем отображение блока заголовка")
     public boolean isBlockTitleDisplayed() {
         return blockName.getText().contains("Оформите карту");
     }
 
 
+    @Step("Отправляем пустое значение формы")
     public MtsDengiPage sendEmptyValue() {
         continueButton.click();
         return this;
     }
 
+    @Step("Проверяем отображение сообщения об ошибке: {expectedMessage}")
     public boolean isFirstErrorMessageDisplayed(String expectedMessage) {
         return firstErrorMessage.getText().contains(expectedMessage);
     }
 
+    @Step("Проверяем, что ссылка VK отображается")
     public MtsDengiPage isVkLinkDisplayed() {
         if (!vkLink.shouldBe(Condition.visible).exists()) {
             throw new AssertionError("Ссылка VK не отображается");
@@ -62,8 +66,8 @@ public class MtsDengiPage {
         return this;
     }
 
+    @Step("Проверяем, что кнопка логина отображается")
     public boolean isLoginButtonDisplayed() {
         return loginButton.isDisplayed();
     }
 }
-
