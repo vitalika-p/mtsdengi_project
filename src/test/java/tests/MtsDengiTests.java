@@ -45,7 +45,7 @@ public class MtsDengiTests extends TestBase {
     @Tag("Simple")
     @Test
     @Description("Проверка, что иконка на ВКонтакте отображается")
-    void VkLinkIconIsVisible() {
+    void vkLinkIconIsVisibleTest() {
         mtsDengiPage
                 .openMainPage()
                 .debitCardButtonClick()
