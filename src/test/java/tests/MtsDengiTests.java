@@ -1,11 +1,11 @@
 package tests;
 
-import jdk.jfr.Description;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.MtsDengiPage;
 
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MtsDengiTests extends TestBase {
 
@@ -13,51 +13,48 @@ public class MtsDengiTests extends TestBase {
 
     @Tag("Simple")
     @Test
-    @Description("Проверка, что отображается текст на странице после перехода по ссылке 'Дебетовая карта'")
+    @DisplayName("Проверка отображения текста на странице после перехода по ссылке")
     void openDebitCardPageTest() {
         mtsDengiPage.openMainPage()
-                .debitCardButtonClick()
-                .isPageTextDisplayed();
+                .debitCardButtonClick("Дебетовая карта");
+        assertTrue(new MtsDengiPage().isPageTextDisplayed("Маркетплейсы с 15% кешбэком"));
     }
 
     @Tag("Simple")
     @Test
-    @Description("Проверка, что после клика на 'Дебетовая карта' открывается блок с заказом карты")
+    @DisplayName("Проверка  клика на 'Дебетовая карта' и перехода к форме")
     void clickOnTheButtonTest() {
-        mtsDengiPage
-                .openMainPage()
-                .debitCardButtonClick()
+        mtsDengiPage.openMainPage()
+                .debitCardButtonClick("Дебетовая карта")
                 .bankCardOrder()
-                .isBlockTitleDisplayed();
+                .isBlockTitleDisplayed("Оформите карту");
     }
 
     @Tag("Simple")
     @Test
-    @Description("Проверка, что при отправке пустого значения отображается ошибка")
+    @DisplayName("Отображение ошибки при отправке пустого значения")
     void sendEmptyValueTest() {
-        mtsDengiPage
-                .openMainPage()
-                .debitCardButtonClick()
+        mtsDengiPage.openMainPage()
+                .debitCardButtonClick("Дебетовая карта")
                 .sendEmptyValue()
                 .isFirstErrorMessageDisplayed("Введите верный номер телефона");
     }
 
     @Tag("Simple")
     @Test
-    @Description("Проверка, что иконка на ВКонтакте отображается")
+    @DisplayName("Проверка отображения иконки для перехода к ВКонтакте")
     void vkLinkIconIsVisibleTest() {
-        mtsDengiPage
-                .openMainPage()
-                .debitCardButtonClick()
+        mtsDengiPage.openMainPage()
+                .debitCardButtonClick("Дебетовая карта")
                 .isVkLinkDisplayed();
     }
 
     @Tag("Simple")
     @Test
-    @Description("Проверка, что кнопка 'Войти в интернет-банк' отображается")
+    @DisplayName("Проверка отображения кнопки 'Войти в интернет-банк'")
     void loginButtonIsDisplayedTest() {
         mtsDengiPage.openMainPage()
-                .debitCardButtonClick()
+                .debitCardButtonClick("Дебетовая карта")
                 .isLoginButtonDisplayed();
     }
 }

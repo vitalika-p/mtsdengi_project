@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class MtsDengiPage {
 
     private final SelenideElement
-            debitCardElement = $(".styled__NavText-sc-f8xjqq-4.ecQasG"),
+            debitCardElement = $x("//a[.//div[text()='Дебетовая карта']]"),
             getACardButton = $("#topBanner .styled__ButtonContainer-sc-e25894b-6 button div"),
             blockName = $("#issueCard form > div"),
             pageText = $("#topBanner .styled__TextContainer-sc-e25894b-0 h1"),
@@ -25,15 +25,15 @@ public class MtsDengiPage {
         return this;
     }
 
-    @Step("Нажимаем на кнопку 'Дебетовая карта'")
-    public MtsDengiPage debitCardButtonClick() {
-        debitCardElement.shouldHave(text("Дебетовая карта")).click();
+    @Step("Нажимаем на кнопку с текстом '{buttonText}'")
+    public MtsDengiPage debitCardButtonClick(String buttonText) {
+        debitCardElement.shouldHave(text(buttonText)).click();
         return this;
     }
 
-    @Step("Проверяем, что текст на странице отображается")
-    public boolean isPageTextDisplayed() {
-        return pageText.getText().contains("Дарим 25 айфонов");
+    @Step("Проверяем, что текст '{expectedText}' отображается на странице")
+    public boolean isPageTextDisplayed(String expectedText) {
+        return pageText.getText().contains(expectedText);
     }
 
     @Step("Оформляем заказ банковской карты")
@@ -41,9 +41,10 @@ public class MtsDengiPage {
         getACardButton.click();
         return this;
     }
-    @Step("Проверяем отображение блока заголовка")
-    public boolean isBlockTitleDisplayed() {
-        return blockName.getText().contains("Оформите карту");
+
+    @Step("Проверяем, что заголовок блока содержит текст '{expectedText}'")
+    public boolean isBlockTitleDisplayed(String expectedText) {
+        return blockName.getText().contains(expectedText);
     }
 
 
