@@ -12,7 +12,7 @@ public class MtsDengiTests extends TestBase {
     DebitCardPage debitCardPage = new DebitCardPage();
     MainPage mainPage = new MainPage();
     ChatPage chatPage = new ChatPage();
-    screens.HeaderPage headerPage = new screens.HeaderPage();
+    HeaderPage headerPage = new HeaderPage();
 
     @Tag("Smoke")
     @Test
@@ -105,7 +105,7 @@ public class MtsDengiTests extends TestBase {
 
     @Tag("Smoke")
     @Test
-    void testHeaderSectionsAndMoreButton() {
+    void headerSectionsAndMoreButtonTest() {
         mainPage.openMainPage();
         headerPage.checkAllSections();
     }
