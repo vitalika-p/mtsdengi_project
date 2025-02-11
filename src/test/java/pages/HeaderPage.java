@@ -45,7 +45,7 @@ public class HeaderPage {
         return this;
     }
 
-    @Step("Проверка разделов на шапке")
+    @Step("Проверка разделов в шапке")
     public HeaderPage checkAllSections() {
         checkHeaderSections();
         openMoreSections();

@@ -106,6 +106,7 @@ public class MtsDengiTests extends TestBase {
 
     @Tag("Smoke")
     @Test
+    @DisplayName("Проверка отображения разделов в шапке")
     void headerSectionsAndMoreButtonTest() {
         mainPage.openMainPage();
         headerPage.checkAllSections();
