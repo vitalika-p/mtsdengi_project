@@ -11,7 +11,7 @@
 - <a href="#allureReport"> Пример Allure-отчета</a>
 - <a href="#allureReport2"> Пример отчета Allure TestOps</a>
 - <a href="#tg"> Уведомления в Telegram с использованием бота</a>
-- <a href="#movie">Видеопример прохождения тестов</a>
+- <a href="#movie">Видео примера запуска тестов в Selenoid</a>
 
 
 Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>[Selenide](https://selenide.org/)</code>, сборщик - <code>Gradle</code>.
@@ -41,7 +41,7 @@ gradle clean simple_test
 
 ---
 <a id="jenkins"></a>
-## <img width="30" style="vertical-align:middle" title="Jenkins" src="media/logo/jenkins.svg"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/31_mtsdengi/"> Jenkins </a>
+## <img width="30" style="vertical-align:middle" title="Jenkins" src="media/logo/Jenkins.svg"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/31_mtsdengi/"> Jenkins </a>
 Для доступа в Jenkins необходима регистрация на ресурсе [Jenkins](https://jenkins.autotests.cloud/)
 Для запуска сборки необходимо нажать кнопку <code>Build now</code>.
 <p align="center">
@@ -66,7 +66,7 @@ ____
 
 ____
 <a id="tg"></a>
-## <img width="30" style="vertical-align:middle" title="Telegram" src="media/logo/telegram.svg"> Уведомления в Telegram с использованием бота
+## <img width="30" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 После завершения сборки, бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом
 о прогоне тестов в чат
 <p align="center" style="background-color: #18222d">
