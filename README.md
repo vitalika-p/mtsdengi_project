@@ -1,105 +1,79 @@
 # Проект по автоматизации тестовых сценариев для сайта МТС-Деньги
-## :pushpin: Содержание:
-
-- Использованный стек технологий
-- Запуск автотестов
-- Сборка в Jenkins
-- Пример Allure-отчета
-- Интеграция с Allure TestOps
-- Уведомления в Telegram с использованием бота
-- Видео примера запуска тестов в Selenoid
-
-## :computer: Использованный стек технологий
-
 <p align="center">
-<a href="https://www.jetbrains.com/idea/"><img src="media/logo/Intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a>
-<a href="https://www.java.com/"><img src="media/logo/Java.svg" width="50" height="50"  alt="Java"/></a>
-<a href="https://selenide.org/"><img src="media/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>  
-<a href="https://aerokube.com/selenoid/"><img src="media/logo/Selenoid.svg" width="50" height="50"  alt="Selenoid"/></a> 
-<a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="media/logo/Allure_Report.svg" width="50" height="50"  alt="Allure"/></a>
-<a href="https://qameta.io/"><img src="media/logo/AllureTestOps.svg" width="50" height="50"  alt="Allure TestOps"/></a>  
-<a href="https://gradle.org/"><img src="media/logo/Gradle.svg" width="50" height="50"  alt="Gradle"/></a> 
-<a href="https://junit.org/junit5/"><img src="media/logo/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a>   
-<a href="https://github.com/"><img src="media/logo/GitHub.svg" width="50" height="50"  alt="Github"/></a>   
-<a href="https://www.jenkins.io/"><img src="media/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>   
-<a href="https://web.telegram.org/k//"><img src="media/logo/Telegram.svg" width="50" height="50"  alt="IDEA"/></a>
+<a href="https://ru.wikipedia.org/"><img width="300" img title="https://mtsdengi.ru/" src="media/logo/logo.png"></a>
 </p>
 
-- В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для тестирования Selenide. 
-- В качестве сборщика был использован - <code>Gradle</code>.  
-- Использованы фреймворки <code>JUnit 5</code> и [Selenide](https://selenide.org/).
-- При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в <code>Jenkins</code> с формированием Allure-отчета и отправкой результатов в <code>Telegram</code> при помощи бота. 
-- Осуществлена интеграция с <code>Allure TestOps</code>
 
-Содержание Allure-отчета:
-* Шаги теста;
-* Скриншот страницы на последнем шаге;
-* Page Source;
-* Логи браузерной консоли;
-* Видео выполнения автотеста.
+##  Содержание:
+- <a href="#cases"> Тест-кейсы</a>
+- <a href="#autotests"> Запуск автотестов</a>
+- <a href="#jenkins"> Сборка в Jenkins</a>
+- <a href="#allureReport"> Пример Allure-отчета</a>
+- <a href="#allureReport2"> Пример отчета Allure TestOps</a>
+- <a href="#tg"> Уведомления в Telegram с использованием бота</a>
+- <a href="#movie">Видеопример прохождения тестов</a>
 
-## :arrow_forward: Запуск автотестов
 
-### Запуск тестов из терминала
-```
+Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>[Selenide](https://selenide.org/)</code>, сборщик - <code>Gradle</code>.
+
+<code>JUnit 5</code> задействован в качестве фреймворка модульного тестирования.
+
+____
+<a id="cases"></a>
+## 🕵️‍♂️ Тест-кейсы
+- Отображение ошибки при отправке невалидного значения в поле ввода
+- Проверка открытия и закрытия чата с поддержкой
+- Проверка отображения иконки для перехода к ВКонтакте и переход по ней
+- Проверка отображения кнопки 'Войти в интернет-банк' и ее цвета
+- Проверка отображения разделов в шапке
+- Проверка отображения текста на странице после перехода по кнопке 'Дебетовая карта'
+- Проверка перехода к форме оформления карты
+
+
+____
+<a id="autotests"></a>
+## ▶️ Команда для запуска автотестов из терминала
+
+
+```bash 
 gradle clean simple_test
 ```
-При выполнении команды, данные тесты запустятся удаленно в <code>Selenoid</code>.
 
-```
-clean
-simple_test
--DremoteUrl=https://${REMOTE_LOGIN}:${REMOTE_PASSWORD}@${REMOTE_URL}/wd/hub
--DbrowserName=${BROWSER}
--DbrowserVersion=${BROWSER_VERSION}
--DbrowserSize=${BROWSER_SIZE}
-```
-
-### Параметры сборки
-
-* <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-* <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
-* <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
-* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
-* <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
-
-## <img src="media/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+---
+<a id="jenkins"></a>
+## <img width="30" style="vertical-align:middle" title="Jenkins" src="media/logo/jenkins.svg"> </a> Сборка в <a target="_blank" href="https://jenkins.autotests.cloud/job/31_mtsdengi/"> Jenkins </a>
+Для доступа в Jenkins необходима регистрация на ресурсе [Jenkins](https://jenkins.autotests.cloud/)
+Для запуска сборки необходимо нажать кнопку <code>Build now</code>.
 <p align="center">
-<img title="Jenkins Build" src="media/screens/JenkinsBuild.png">
+<img title="jenkins" src="media/screens/JenkinsBuild.png">
+</p>
+После выполнения сборки, в блоке <code>Build History</code> напротив номера сборки появятся значки 
+<code>Allure Report</code>, при клике на которые откроется страница с сформированным html-отчетом.
+
+____
+<a id="allureReport"></a>
+## <img width="30" style="vertical-align:middle" title="Allure Report" src="media/logo/Allure_Report.svg"> </a> Пример <a target="_blank" href="https://jenkins.autotests.cloud/job/c31_vmnqa_mobile_tests_wiki/56/allure/"> Allure-отчета </a>
+<p align="center">
+<img title="Allure Report" src="media/screens/allure.png">
 </p>
 
-## <img src="media/logo/Allure_Report.svg" title="Allure Report" width="4%"/> Пример Allure-отчета
-### Overview
-
+____
+<a id="allureReport2"></a>
+## <img width="30" style="vertical-align:middle" title="Allure Report" src="media/logo/AllureTestOps.svg"> </a> Пример <a target="_blank" href="https://allure.autotests.cloud/launch/44571"> отчета Allure TestOps</a>
 <p align="center">
-<img title="Allure Overview" src="media/screens/allureReport.png">
+<img title="Allure Report" src="media/screens/allure2.png">
 </p>
 
-### Результат выполнения теста
-
-<p align="center">
-<img title="Test Results in Alure" src="media/screens/ResultTest.png">
+____
+<a id="tg"></a>
+## <img width="30" style="vertical-align:middle" title="Telegram" src="media/logo/telegram.svg"> Уведомления в Telegram с использованием бота
+После завершения сборки, бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом
+о прогоне тестов в чат
+<p align="center" style="background-color: #18222d">
+<img width="40%" title="Telegram Notifications" src="media/screens/notification.png">
 </p>
 
-## <img src="media/logo/AllureTestOps.svg" title="Allure TestOps" width="4%"/> Интеграция с Allure TestOps
-
-Выполнена интеграция сборки <code>Jenkins</code> с <code>Allure TestOps</code>.
-Результат выполнения автотестов отображается в <code>Allure TestOps</code>
-На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
-
-<p align="center">
-<img title="Allure TestOps DashBoard" src="media/screens/allureAutotestCloud.png">
-</p>
-
-
-## <img width="4%" style="vertical-align:middle" title="Telegram" src="media/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
-
-После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом.
-
-<p align="center">
-<img width="70%" title="Telegram Notifications" src="media/screens/notification.png">
-</p>
+____
 
 ## Видео примера запуска тестов в Selenoid
 
