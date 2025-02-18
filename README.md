@@ -5,6 +5,7 @@
 
 
 ##  Содержание:
+- <a href="#tools"> Технологии и инструменты</a>
 - <a href="#cases"> Тест-кейсы</a>
 - <a href="#autotests"> Запуск автотестов</a>
 - <a href="#jenkins"> Сборка в Jenkins</a>
@@ -15,8 +16,23 @@
 
 
 Тесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования <code>[Selenide](https://selenide.org/)</code>, сборщик - <code>Gradle</code>.
-
 <code>JUnit 5</code> задействован в качестве фреймворка модульного тестирования.
+____
+<a id="tools"></a>
+## 🔨 Технологии и инструменты:
+<div align="center">
+<a href="https://www.jetbrains.com/idea/"><img alt="InteliJ IDEA" height="50" src="media/logo/Intelij_IDEA.svg" width="50"/></a>
+<a href="https://github.com/"><img alt="GitHub" height="50" src="media/logo/GitHub.svg" width="50"/></a>  
+<a href="https://www.java.com/"><img alt="Java" height="50" src="media/logo/Java.svg" width="50"/></a>
+<a href="https://gradle.org/"><img alt="Gradle" height="50" src="media/logo/Gradle.svg" width="50"/></a>  
+<a href="https://junit.org/junit5/"><img alt="JUnit 5" height="50" src="media/logo/JUnit5.svg" width="50"/></a>
+<a href="https://selenide.org/"><img alt="Selenide" height="50" src="media/logo/Selenide.svg" width="50"/></a>
+<a href="https://aerokube.com/selenoid/"><img alt="Selenoid" height="50" src="media/logo/Selenoid.svg" width="50"/></a>
+<a href="https://www.jenkins.io/"><img alt="Jenkins" height="50" src="media/logo/Jenkins.svg" width="50"/></a>
+<a href="https://github.com/allure-framework/"><img alt="Allure Report" height="50" src="media/logo/Allure_Report.svg" width="50"/></a>
+<a href="https://qameta.io/"><img alt="Allure TestOps" height="50" src="media/logo/AllureTestOps.svg" width="50"/></a>
+<a href="https://telegram.org/"><img alt="Telegram" height="50" src="media/logo/Telegram.svg" width="50"/></a>
+</div>
 
 ____
 <a id="cases"></a>

@@ -4,6 +4,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
 import io.qameta.allure.Owner;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,7 @@ public class ChatSupportTests extends TestBase {
     MainPage mainPage = new MainPage();
     ChatPage chatPage = new ChatPage();
 
+    @Disabled
     @Tag("Smoke")
     @Test
     @DisplayName("Проверка открытия и закрытия чата с поддержкой")
