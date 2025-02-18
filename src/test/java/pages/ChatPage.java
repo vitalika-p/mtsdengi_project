@@ -12,8 +12,7 @@ public class ChatPage {
             chatWindow = $("div.webim-no-operator-block"),
             chatTitle = $("span.webim-no-operator-title[data-webim-resource='chat.header.default_title']"),
             chatSubtitle = $("span.first-question-header-subtitle[data-webim-resource='chat.header.first_question_subtitle']"),
-closeButton = $("div.webim-action.webim-action-close[data-webim-request='service:chat:close'] svg.webim-ico-close-light");
-;
+            closeButton = $("div.webim-action.webim-action-close[data-webim-request='service:chat:close'] svg.webim-ico-close-light");
 
     @Step("Ожидание загрузки кнопки чата")
     public ChatPage waitForChatButton() {

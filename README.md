@@ -1,6 +1,6 @@
-# Проект по автоматизации тестовых сценариев для сайта МТС-Деньги
+# Проект по автоматизации тестовых сценариев для сайта [МТС-Деньги](https://mtsdengi.ru/)
 <p align="center">
-<a href="https://ru.wikipedia.org/"><img width="300" img title="https://mtsdengi.ru/" src="media/logo/logo.png"></a>
+<a href="https://mtsdengi.ru/"><img width="300" img title="https://mtsdengi.ru/" src="media/logo/logo.png"></a>
 </p>
 
 

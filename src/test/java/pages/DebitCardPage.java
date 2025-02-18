@@ -12,7 +12,7 @@ public class DebitCardPage {
 
     private final SelenideElement
             debitCardElement = $x("//a[.//div[text()='Дебетовая карта']]"),
-            getACardButton = $x("//button[@type='button' and contains(@class, 'Button-sc-14n6qm4-0')]" + "//div[@data-testid='text' and text()='Оформить карту']"),
+            getACardButton = $("#topBanner > div.styled__ButtonContainer-sc-e25894b-6.jkuYkD > button"),
             blockName = $("#issueCard form > div"),
             pageText = $("#topBanner .styled__TextContainer-sc-e25894b-0 h1"),
             continueButton = $x("//button[text()='Продолжить']"),
@@ -98,6 +98,4 @@ public class DebitCardPage {
                 String.format("Ожидали сообщение: '%s', но получили: '%s'", expectedMessage1, actualMessage));
         return this;
     }
-
-
 }

@@ -6,15 +6,16 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
 public class TestBase {
+
     @BeforeAll
-    static void preconditionForAllTests() {
-        Configuration.browserSize = "1920x1080";
+    static void setup() {
         Configuration.baseUrl = "https://mtsdengi.ru";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
@@ -22,14 +23,16 @@ public class TestBase {
         Configuration.remote = System.getProperty("remoteUrl");
         Configuration.browserVersion = System.getProperty("browserVersion");
 
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+        capabilities.setCapability("selenoid:options", Map.of(
                 "enableVNC", true,
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
+    }
 
+    @BeforeEach
+    void addAllureListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
@@ -39,11 +42,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
-    }
-
-    @AfterEach
-    void afterEach() {
         Selenide.closeWebDriver();
     }
 }
-
