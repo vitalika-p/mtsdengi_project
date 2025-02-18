@@ -49,4 +49,22 @@ public class DebitCardTests extends TestBase {
                 .bankCardOrder()
                 .validateBankCardOrderForm(pageTitle);
     }
+
+    @Tag("Smoke")
+    @Test
+    @DisplayName("Проверка отображения ошибки при отправке пустой формы")
+    @Story("Форма оформления")
+    void errorMessageIsDisplayedTest() {
+        String buttonLabel = "Дебетовая карта";
+        String invalidPhoneNumber = "75";
+
+        mainPage.openMainPage();
+        debitCardPage
+                .debitCardButtonClick(buttonLabel)
+                .validateGetACardButtonDisplayed()
+                .bankCardOrder()
+                .enterInvalidPhoneNumber(invalidPhoneNumber)
+                .sendInvalidValues()
+                .checkErrorMessages("Введите верный номер телефона");
+    }
 }
